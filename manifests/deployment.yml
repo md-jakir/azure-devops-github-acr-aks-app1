@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myaksnginxapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myaksnginxapp
+  template:
+    metadata:
+      labels:
+        app: myaksnginxapp 
+    spec:
+      containers:
+        - name: myaksnginxapp 
+          image: acrgit1.azurecr.io/myaksnginxapp
+          ports:
+          - containerPort: 80
